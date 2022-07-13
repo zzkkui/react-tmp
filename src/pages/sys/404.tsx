@@ -7,7 +7,7 @@ import styles from './index.less'
 import { useSetRecoilState } from 'recoil'
 import { hideHeaderAtom } from 'src/store/global'
 
-const STATIC_PATH = process.env.NODE_ENV !== 'production' ? '/api/getNotfound/' : window.TOP_PUBLIC?.STATIC_PATH
+const STATIC_PATH = import.meta.env.PROD ? '/api/getNotfound/' : window?.STATIC_PATH
 
 function NotFound() {
   const gifRef = useRef<HTMLDivElement>(null)
